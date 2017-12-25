@@ -13,7 +13,7 @@ import com.example.administrator.cebcs.fragment.ShowNotificationFragment;
 
 public class ShowNotificationActivity extends AppCompatActivity {
 
-    private String idSubjectString, detailString;
+    private String idSubjectString, detailString, dateString;
     private String tag = "25DecV2";
 
     @Override
@@ -23,13 +23,14 @@ public class ShowNotificationActivity extends AppCompatActivity {
 
         idSubjectString = getIntent().getStringExtra("idSubject");
         detailString = getIntent().getStringExtra("Detail");
+        dateString = getIntent().getStringExtra("Date");
         Log.d(tag, "idSubject ==> " + idSubjectString);
         Log.d(tag, "Detail ==> " + detailString);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.contentShowNotiFragment,
-                            ShowNotificationFragment.showNotiInstance(idSubjectString, detailString))
+                            ShowNotificationFragment.showNotiInstance(idSubjectString, detailString, dateString))
                     .commit();
         }
 

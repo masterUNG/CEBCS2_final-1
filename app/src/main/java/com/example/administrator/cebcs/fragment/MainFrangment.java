@@ -48,6 +48,17 @@ public class MainFrangment extends Fragment {
         //Login Controller
         loginController();
 
+//        Forgot Password
+        TextView textView = getView().findViewById(R.id.txtForgotPass);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contentFragmentMain, new ForgotpasswordFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
 
     }   //onActivityCreat
 

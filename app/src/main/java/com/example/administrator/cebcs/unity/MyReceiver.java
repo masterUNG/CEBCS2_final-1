@@ -20,8 +20,11 @@ public class MyReceiver extends BroadcastReceiver{
 
         String idSubject = intent.getStringExtra("idSubject");
         String detailString = intent.getStringExtra("Detail");
+        String dateString = intent.getStringExtra("Date");
+
         intent1.putExtra("idSubject", idSubject);
         intent1.putExtra("Detail", detailString);
+        intent1.putExtra("Date", dateString);
 
         intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent1);

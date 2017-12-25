@@ -21,15 +21,17 @@ import org.json.JSONObject;
 
 public class ShowNotificationFragment extends Fragment{
 
-    private String idSubjectString, detailString;
+    private String idSubjectString, detailString, dateString;
 
     public static ShowNotificationFragment showNotiInstance(String idSubjectString,
-                                                            String detailString) {
+                                                            String detailString,
+                                                            String dateString) {
 
         ShowNotificationFragment showNotificationFragment = new ShowNotificationFragment();
         Bundle bundle = new Bundle();
         bundle.putString("idSubject", idSubjectString);
         bundle.putString("Detail", detailString);
+        bundle.putString("Date", dateString);
         showNotificationFragment.setArguments(bundle);
 
         return showNotificationFragment;
@@ -42,16 +44,29 @@ public class ShowNotificationFragment extends Fragment{
 
         idSubjectString = getArguments().getString("idSubject");
         detailString = getArguments().getString("Detail");
+        dateString = getArguments().getString("Date");
 
 //        Show Subject
         showSubject();
 
 //        Show Date
+        showDate();
 
 //        Show Detail
+        showDetail();
 
 
     }   // Main Method
+
+    private void showDate() {
+        TextView textView = getView().findViewById(R.id.txtDate);
+        textView.setText("Date : " + dateString);
+    }
+
+    private void showDetail() {
+        TextView textView = getView().findViewById(R.id.txtDetail);
+        textView.setText("Detail : " + detailString);
+    }
 
     private void showSubject() {
         try {
