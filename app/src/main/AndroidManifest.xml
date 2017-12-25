@@ -18,7 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ServiceActivity"></activity>
+        <activity android:name=".ServiceActivity" />
+        <activity android:name=".ShowNotificationActivity"></activity>
+
+        <receiver android:name=".unity.MyReceiver" android:process=":remote"/>
+
     </application>
 
 </manifest>
