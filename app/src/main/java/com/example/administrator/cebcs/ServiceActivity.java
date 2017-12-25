@@ -141,6 +141,7 @@ public class ServiceActivity extends AppCompatActivity {
 
                 Calendar calendar1 = Calendar.getInstance();
                 calendar1.set(Calendar.MINUTE, calendar.get(Calendar.MINUTE) + 1);
+                calendar1.set(Calendar.SECOND, 0);
                 Log.d(tag, "TestCalendar ==> " + calendar1.getTime());
 
 //                End Test
