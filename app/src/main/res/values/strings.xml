@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">CE BCS</string>
+    <string name="user">รหัสนักศึกษา :</string>
+    <string name="password">รหัสผ่าน:</string>
+    <string name="register">สร้างบัญชี</string>
+    <string name="signin">เข้าสู่ระบบ :</string>
+    <string name="forgotpassword">ลืมรหรัสผ่าน :</string>
+    <string name="memu">เมนู :</string>
+    <string name="have_space">มีช่องว่าง</string>
+    <string name="message_have_space">กรุณากรอก ทุกช่องค่ะ</string>
+    <string name="id_false">รหัสนักศึกษาผิด</string>
+    <string name="mess_id_false">รหัสต้องมี 13 หลัก</string>
+    <string name="gender_false">คุณยังไม่ได้เลือก เพศ</string>
+    <string name="mass_gender_false">โปรดระบุเพศ</string>
+    <string name="pass_false">รหัสผ่านไม่เหมือนกัน</string>
+    <string name="mass_pass_false">กรณากรอกรหัสที่เหมือนกันค่ะ</string>
+
+    <string name="open">Open Drawer</string>
+    <string name="close">Close Drawer</string>
+    <string name="major">สาขา</string>
+    <string name="sector">ภาค</string>
+    <string name="my_class">ชั้น</string>
+    <string name="title_detail">ข้อมูลนักศึกษา</string>
+
+    <string name="ds_name">ชื่อ</string>
+    <string name="ds_surname">นามสกุล</string>
+    <string name="ds_id">รหัส</string>
+    <string name="ds_major">สาขา</string>
+    <string name="ds_sector">ภาค</string>
+    <string name="ds_class">ชั้น</string>
+    <string name="title_ce">ข้อมูล CE</string>
+    <string name="column1">ลำดับ</string>
+    <string name="column2">รหัส</string>
+    <string name="column3">ชื่อวิชา</string>
+    <string name="column4">เกรด</string>
+    <string name="id_student13digi">รหัสนักศึกษา 13 หลัก :</string>
+    <string name="pass1">รหัสผ่าน :</string>
+    <string name="pass2">ยืนยันรหัสผ่าน :</string>
+    <string name="message_no_id">ไม่มี ID นี่ในฐานข้อมูล</string>
+    <string name="id_registed">Id นี่สมัครไปแล้ว</string>
+    <string name="txt_exit">ออกจากระบบ</string>
+
+</resources>

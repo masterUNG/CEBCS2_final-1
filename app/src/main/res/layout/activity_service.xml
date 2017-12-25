@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myDrawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.cebcs.ServiceActivity">
+
+    <!--Content-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Toolbar-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolberService"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/mylogo"
+                android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <!--Content Fragment-->
+        <FrameLayout
+            android:id="@+id/contentFragmentService123"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+
+    <!--Drawer Menu-->
+    <LinearLayout
+        android:layout_gravity="start"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:layout_width="320dp"
+        android:layout_height="match_parent">
+
+        <!--Menu-->
+        <!--Name and ID-->
+        <LinearLayout
+            android:padding="15dp"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Name-->
+            <TextView
+                android:padding="15dp"
+                android:id="@+id/txtName"
+                android:textStyle="bold"
+                android:text="Name"
+                android:textSize="@dimen/h2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--ID-->
+            <TextView
+                android:id="@+id/txtID"
+                android:textStyle="bold"
+                android:text="ID"
+                android:textSize="@dimen/h2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+        <!--Detail Menu-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--Home-->
+            <LinearLayout
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--Icon-->
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_action_student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--Text-->
+                <TextView
+                    android:id="@+id/txtHome"
+                    android:clickable="true"
+                    android:layout_gravity="center_vertical"
+                    android:text="หน้าหลัก"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--Detail Student-->
+            <LinearLayout
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--Icon-->
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_action_student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--Text-->
+                <TextView
+                    android:id="@+id/txtDatailStudent"
+                    android:clickable="true"
+                    android:layout_gravity="center_vertical"
+                    android:text="ข้อมูลนักศึกษา"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--Detail CE-->
+            <LinearLayout
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--Icon-->
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_action_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--Text-->
+                <TextView
+                    android:id="@+id/txtCEdetail"
+                    android:layout_gravity="center_vertical"
+                    android:text="ข้อมูลรายวิชาCE"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <!--Notification-->
+            <LinearLayout
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--Icon-->
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_action_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--Text-->
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:text="แจ้งเตือน"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <!--Exit-->
+            <LinearLayout
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--Icon-->
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_action_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--Text-->
+                <TextView
+                    android:clickable="true"
+                    android:id="@+id/txtExit"
+                    android:layout_gravity="center_vertical"
+                    android:text="ออกจากระบบ"
+                    android:textSize="@dimen/h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</android.support.v4.widget.DrawerLayout>

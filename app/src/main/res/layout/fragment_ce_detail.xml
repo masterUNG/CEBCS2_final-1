@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Title-->
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:text="@string/title_ce"
+        android:textSize="@dimen/h1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <!--Content-->
+    <LinearLayout
+
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Head-->
+        <LinearLayout
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="@dimen/h2"
+                android:text="@string/column1"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="@dimen/h2"
+                android:text="@string/column2"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="@dimen/h2"
+                android:text="@string/column3"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textSize="@dimen/h2"
+                android:text="@string/column4"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--Content ListView-->
+        <ListView
+            android:id="@+id/livCE"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

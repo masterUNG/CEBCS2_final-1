@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Title-->
+    <TextView
+        android:layout_margin="15dp"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="@dimen/h1"
+        android:text="@string/title_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!--Content-->
+    <LinearLayout
+        android:padding="16dp"
+        android:layout_margin="30dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Name-->
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:text="@string/ds_name"
+                android:textSize="@dimen/h2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <!--Content-->
+            <TextView
+                android:id="@+id/txtName"
+                android:text="@string/ds_name"
+                android:textSize="@dimen/h2"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--Sur-->
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:text="@string/ds_surname"
+                android:textSize="@dimen/h2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <!--Content-->
+            <TextView
+                android:id="@+id/txtSurname"
+                android:text="@string/ds_surname"
+                android:textSize="@dimen/h2"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--ID-->
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:text="@string/ds_id"
+                android:textSize="@dimen/h2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <!--Content-->
+            <TextView
+                android:id="@+id/txtID"
+                android:text="@string/ds_id"
+                android:textSize="@dimen/h2"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--Major-->
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:text="@string/ds_major"
+                android:textSize="@dimen/h2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <!--Content-->
+            <TextView
+                android:id="@+id/txtMajor"
+                android:text="@string/ds_major"
+                android:textSize="@dimen/h2"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--Sector-->
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:text="@string/ds_sector"
+                android:textSize="@dimen/h2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <!--Content-->
+            <TextView
+                android:id="@+id/txtSector"
+                android:text="@string/ds_sector"
+                android:textSize="@dimen/h2"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <!--Class-->
+        <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Title-->
+            <TextView
+                android:text="@string/ds_class"
+                android:textSize="@dimen/h2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <!--Content-->
+            <TextView
+                android:id="@+id/txtClass"
+                android:text="@string/ds_class"
+                android:textSize="@dimen/h2"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
