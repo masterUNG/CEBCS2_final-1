@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -16,6 +17,9 @@ import android.widget.TextView;
 import com.example.administrator.cebcs.fragment.CEdetailFragment;
 import com.example.administrator.cebcs.fragment.DetailStudenFragment;
 import com.example.administrator.cebcs.fragment.ServiceFragment;
+import com.example.administrator.cebcs.unity.GetNotiWhereID;
+import com.example.administrator.cebcs.unity.MyConstant;
+import com.example.administrator.cebcs.unity.MyGetAllData;
 
 public class ServiceActivity extends AppCompatActivity {
 
@@ -31,6 +35,9 @@ public class ServiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_service);
 
         loginStrings = getIntent().getStringArrayExtra("Login");
+
+//        Check Notification
+        checkNotification();
 
 //        Show Text
         showText();
@@ -56,6 +63,29 @@ public class ServiceActivity extends AppCompatActivity {
 
 
     }   // Main Method
+
+
+    private void checkNotification() {
+
+        MyConstant myConstant = new MyConstant();
+        String tag = "25DecV1";
+
+        try {
+
+            GetNotiWhereID getNotiWhereID = new GetNotiWhereID(ServiceActivity.this);
+            getNotiWhereID.execute(loginStrings[2],
+                    myConstant.getUrlGetNotificationWhereIdStudentString());
+            String resultJSON = getNotiWhereID.get();
+            Log.d(tag, "JSON ==> " + resultJSON);
+
+
+
+        } catch (Exception e) {
+            Log.d(tag, "e ==> " + e.toString());
+        }
+
+    }
+
 
     private void CEController() {
         TextView textView = (TextView) findViewById(R.id.txtCEdetail);
