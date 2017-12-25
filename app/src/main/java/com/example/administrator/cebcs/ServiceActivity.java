@@ -21,6 +21,10 @@ import com.example.administrator.cebcs.unity.GetNotiWhereID;
 import com.example.administrator.cebcs.unity.MyConstant;
 import com.example.administrator.cebcs.unity.MyGetAllData;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class ServiceActivity extends AppCompatActivity {
 
     //Explicit
@@ -77,6 +81,12 @@ public class ServiceActivity extends AppCompatActivity {
                     myConstant.getUrlGetNotificationWhereIdStudentString());
             String resultJSON = getNotiWhereID.get();
             Log.d(tag, "JSON ==> " + resultJSON);
+
+            Calendar calendar = Calendar.getInstance();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+            String currentDateString = dateFormat.format(calendar.getTime());
+            Log.d(tag, "currentTime ==> " + currentDateString);
 
 
 
