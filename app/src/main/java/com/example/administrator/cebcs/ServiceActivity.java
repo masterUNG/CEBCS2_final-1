@@ -137,30 +137,38 @@ public class ServiceActivity extends AppCompatActivity {
                 notiCalendar1.set(Calendar.DAY_OF_YEAR, intNotiDayOfYear);
                 notiCalendar1.set(Calendar.HOUR_OF_DAY, 8);
 
-//                For Test
-
-                Calendar calendar1 = Calendar.getInstance();
-                calendar1.set(Calendar.MINUTE, calendar.get(Calendar.MINUTE) + 1);
-                calendar1.set(Calendar.SECOND, 0);
-                Log.d(tag, "TestCalendar ==> " + calendar1.getTime());
-
+//                For Test  จะทำงาน Delay 1 นาที
+                Calendar calendarTest = Calendar.getInstance();
+                calendarTest.set(Calendar.MINUTE, calendar.get(Calendar.MINUTE) + 1);
+                calendarTest.set(Calendar.SECOND, 0);
+                Log.d(tag, "TestCalendar ==> " + calendarTest.getTime());
 //                End Test
 
-                myNotification(calendar1, 1);
-
-
+                myNotification(calendarTest, 1);
 
 
             } else {
-            }
+
+                if (Integer.parseInt(secondNotiString) == 0) {
+
+                    calendar.set(Calendar.HOUR_OF_DAY, 8);
+
+                    myNotification(calendar, 2);
+
+                } else {
+
+                    if (Integer.parseInt(lastNotiString) == 0) {
+
+                        calendar.set(Calendar.HOUR_OF_DAY, 12);
+
+                        myNotification(calendar, 3);
 
 
-//            calendar.setTime(dateFormat.parse(notificationDateString));
-//            Log.d(tag, "notiCallendar ==> " + calendar.getTime().toString());
-//
-//            int intFirstNotiDate = calendar.get(Calendar.DAY_OF_YEAR);
-//            calendar.set(Calendar.DAY_OF_YEAR, intFirstNotiDate-3);
-//            Log.d(tag, "notiCallendar First ==> " + calendar.getTime().toString());
+                    }
+
+                } // if
+
+            }   // if
 
 
 
@@ -180,6 +188,7 @@ public class ServiceActivity extends AppCompatActivity {
 
         intent.putExtra("idSubject", idSubjectString);
         intent.putExtra("Detail", detailString);
+        intent.putExtra("Date", notificationDateString);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(),
                 i, intent, 0);

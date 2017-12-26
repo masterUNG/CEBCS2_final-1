@@ -7,13 +7,33 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
+import android.util.Log;
+
+import com.example.administrator.cebcs.fragment.ShowNotificationFragment;
 
 public class ShowNotificationActivity extends AppCompatActivity {
+
+    private String idSubjectString, detailString, dateString;
+    private String tag = "25DecV2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_notification);
+
+        idSubjectString = getIntent().getStringExtra("idSubject");
+        detailString = getIntent().getStringExtra("Detail");
+        dateString = getIntent().getStringExtra("Date");
+        Log.d(tag, "idSubject ==> " + idSubjectString);
+        Log.d(tag, "Detail ==> " + detailString);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.contentShowNotiFragment,
+                            ShowNotificationFragment.showNotiInstance(idSubjectString, detailString, dateString))
+                    .commit();
+        }
+
 
         showNoti();
 
@@ -23,7 +43,7 @@ public class ShowNotificationActivity extends AppCompatActivity {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         builder.setSmallIcon(R.drawable.ic_alert);
-        builder.setTicker("MasterUNG Alert");
+        builder.setTicker("CEBCS Notification");
         builder.setWhen(System.currentTimeMillis());
         builder.setContentTitle("Title");
         builder.setContentText("Conent");
