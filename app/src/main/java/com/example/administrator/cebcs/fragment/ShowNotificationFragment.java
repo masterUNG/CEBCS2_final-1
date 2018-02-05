@@ -3,9 +3,11 @@ package com.example.administrator.cebcs.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.administrator.cebcs.R;
@@ -21,17 +23,19 @@ import org.json.JSONObject;
 
 public class ShowNotificationFragment extends Fragment{
 
-    private String idSubjectString, detailString, dateString;
+    private String idSubjectString, detailString, dateString, idSt2String;
 
     public static ShowNotificationFragment showNotiInstance(String idSubjectString,
                                                             String detailString,
-                                                            String dateString) {
+                                                            String dateString,
+                                                            String idSt2String) {
 
         ShowNotificationFragment showNotificationFragment = new ShowNotificationFragment();
         Bundle bundle = new Bundle();
         bundle.putString("idSubject", idSubjectString);
         bundle.putString("Detail", detailString);
         bundle.putString("Date", dateString);
+        bundle.putString("idSt2", idSt2String);
         showNotificationFragment.setArguments(bundle);
 
         return showNotificationFragment;
@@ -45,6 +49,7 @@ public class ShowNotificationFragment extends Fragment{
         idSubjectString = getArguments().getString("idSubject");
         detailString = getArguments().getString("Detail");
         dateString = getArguments().getString("Date");
+        idSt2String = getArguments().getString("idSt2");
 
 //        Show Subject
         showSubject();
@@ -55,8 +60,22 @@ public class ShowNotificationFragment extends Fragment{
 //        Show Detail
         showDetail();
 
+//        Submit Controller
+        submitController();
 
     }   // Main Method
+
+    private void submitController() {
+
+        String tag = "5FebV1";
+        Log.d(tag, "idSt2 ==> " + idSt2String);
+        Log.d(tag, "idSubject ==> " + idSubjectString);
+
+        Button button = getView().findViewById(R.id.btnSubmit);
+
+
+
+    }
 
     private void showDate() {
         TextView textView = getView().findViewById(R.id.txtDate);

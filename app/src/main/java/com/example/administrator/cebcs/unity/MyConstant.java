@@ -6,6 +6,8 @@ package com.example.administrator.cebcs.unity;
 
 public class MyConstant {
 
+    private String urlGetNotiWhereIdSubject = "http://androidthai.in.th/12Sep/getNotificationWhereIdStudent.php";
+
     private String urlGetNotificationWhereIdStudentString = "http://androidthai.in.th/12Sep/getNotificationWhereIdStudent.php";
 
     private String urlPostUserString = "http://androidthai.in.th/12Sep/addUserChris.php";
@@ -58,6 +60,10 @@ public class MyConstant {
             "ห้อง 2/4"
     };
 
+
+    public String getUrlGetNotiWhereIdSubject() {
+        return urlGetNotiWhereIdSubject;
+    }
 
     public String getUrlGetNotificationWhereIdStudentString() {
         return urlGetNotificationWhereIdStudentString;

@@ -189,6 +189,7 @@ public class ServiceActivity extends AppCompatActivity {
         intent.putExtra("idSubject", idSubjectString);
         intent.putExtra("Detail", detailString);
         intent.putExtra("Date", notificationDateString);
+        intent.putExtra("idSt2", loginStrings[2]);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(),
                 i, intent, 0);

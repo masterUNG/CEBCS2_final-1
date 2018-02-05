@@ -10,14 +10,14 @@ import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 /**
- * Created by masterung on 25/12/2017 AD.
+ * Created by masterung on 5/2/2018 AD.
  */
 
-public class GetNotiWhereID extends AsyncTask<String, Void, String>{
+public class GetNotiWhereIdSubject extends AsyncTask<String, Void, String>{
 
     private Context context;
 
-    public GetNotiWhereID(Context context) {
+    public GetNotiWhereIdSubject(Context context) {
         this.context = context;
     }
 
@@ -29,10 +29,11 @@ public class GetNotiWhereID extends AsyncTask<String, Void, String>{
             OkHttpClient okHttpClient = new OkHttpClient();
             RequestBody requestBody = new FormEncodingBuilder()
                     .add("isAdd", "true")
-                    .add("idSt2", strings[0])
+                    .add("id_Subject", strings[0])
+                    .add("idSt2", strings[1])
                     .build();
             Request.Builder builder = new Request.Builder();
-            Request request = builder.url(strings[1]).post(requestBody).build();
+            Request request = builder.url(strings[2]).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
             return response.body().string();
 
@@ -42,7 +43,6 @@ public class GetNotiWhereID extends AsyncTask<String, Void, String>{
             return null;
         }
 
-
-    }   // doIn
+    }   // doInBack
 
 }   // Main Class
