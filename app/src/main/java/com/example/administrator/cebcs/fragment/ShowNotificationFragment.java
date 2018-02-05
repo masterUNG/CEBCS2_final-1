@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.administrator.cebcs.R;
+import com.example.administrator.cebcs.unity.GetNotiWhereIdSubject;
 import com.example.administrator.cebcs.unity.GetSubjectWhereIdSubject;
 import com.example.administrator.cebcs.unity.MyConstant;
 
@@ -23,7 +24,9 @@ import org.json.JSONObject;
 
 public class ShowNotificationFragment extends Fragment{
 
-    private String idSubjectString, detailString, dateString, idSt2String;
+    private String idSubjectString, detailString,
+            dateString, idSt2String, firstNotiString,
+            secondNotiString, lastNotiString, labelButtonString;
 
     public static ShowNotificationFragment showNotiInstance(String idSubjectString,
                                                             String detailString,
@@ -71,9 +74,28 @@ public class ShowNotificationFragment extends Fragment{
         Log.d(tag, "idSt2 ==> " + idSt2String);
         Log.d(tag, "idSubject ==> " + idSubjectString);
 
-        Button button = getView().findViewById(R.id.btnSubmit);
+        try {
+
+            Button button = getView().findViewById(R.id.btnSubmit);
+            MyConstant myConstant = new MyConstant();
+            GetNotiWhereIdSubject getNotiWhereIdSubject = new GetNotiWhereIdSubject(getActivity());
+            getNotiWhereIdSubject.execute(idSubjectString, idSt2String,
+                    myConstant.getUrlGetNotiWhereIdSubject());
+
+            String jsonString = getNotiWhereIdSubject.get();
+            Log.d(tag, "JSON ==> " + jsonString);
+
+            JSONArray jsonArray = new JSONArray(jsonString);
+            JSONObject jsonObject = jsonArray.getJSONObject(0);
 
 
+
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
