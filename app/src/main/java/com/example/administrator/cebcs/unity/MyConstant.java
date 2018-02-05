@@ -6,6 +6,12 @@ package com.example.administrator.cebcs.unity;
 
 public class MyConstant {
 
+    private String urlEditFirstNoti = "http://androidthai.in.th/12Sep/editFirstNoti.php";
+
+    private String urlEdittSecondtNoti = "http://androidthai.in.th/12Sep/editSecondNoti.php";
+
+    private String urlEditLastNoti = "http://androidthai.in.th/12Sep/editLastNoti.php";
+
     private String urlEditStatusNoti = "http://androidthai.in.th/12Sep/editStatusNoti.php";
 
     private String urlGetNotiWhereIdSubject = "http://androidthai.in.th/12Sep/getNotificationWhereIdStudent.php";
@@ -62,6 +68,17 @@ public class MyConstant {
             "ห้อง 2/4"
     };
 
+    public String getUrlEditFirstNoti() {
+        return urlEditFirstNoti;
+    }
+
+    public String getUrlEdittSecondtNoti() {
+        return urlEdittSecondtNoti;
+    }
+
+    public String getUrlEditLastNoti() {
+        return urlEditLastNoti;
+    }
 
     public String getUrlEditStatusNoti() {
         return urlEditStatusNoti;

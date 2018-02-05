@@ -79,6 +79,15 @@ public class ServiceActivity extends AppCompatActivity {
 
     }   // Main Method
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        try {
+            checkNotification();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     private void checkNotification() {
 

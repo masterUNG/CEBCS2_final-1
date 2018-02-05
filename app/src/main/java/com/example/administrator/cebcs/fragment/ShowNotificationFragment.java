@@ -9,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.cebcs.R;
+import com.example.administrator.cebcs.unity.EditStatusNoti;
 import com.example.administrator.cebcs.unity.GetNotiWhereIdSubject;
 import com.example.administrator.cebcs.unity.GetSubjectWhereIdSubject;
 import com.example.administrator.cebcs.unity.MyConstant;
@@ -94,17 +96,18 @@ public class ShowNotificationFragment extends Fragment {
             secondNotiString = jsonObject.getString("SecondNoti");
             lastNotiString = jsonObject.getString("LastNoti");
 
+
             if (Integer.parseInt(firstNotiString) == 0) {
                 labelButtonString = "First Notification";
-                columnString = "FirstNoti";
+                columnString = myConstant.getUrlEditFirstNoti();
             } else {
                 if (Integer.parseInt(secondNotiString) == 0) {
                     labelButtonString = "Second Notification";
-                    columnString = "SecondNoti";
+                    columnString = myConstant.getUrlEdittSecondtNoti();
                 } else {
                     if (Integer.parseInt(lastNotiString) == 0) {
                         labelButtonString = "Last Notification";
-                        columnString = "LastNoti";
+                        columnString = myConstant.getUrlEditLastNoti();
                     } else {
                         labelButtonString = "No Notification";
                     }
@@ -120,18 +123,34 @@ public class ShowNotificationFragment extends Fragment {
             });
 
 
-
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    private void editStatus(String columnString) {
+    private void editStatus(String urlString) {
+
+        String tag = "5FebV2";
+        MyConstant myConstant = new MyConstant();
+
 
         try {
 
+            EditStatusNoti editStatusNoti = new EditStatusNoti(getActivity());
 
+            Log.d(tag, "idSubject ==> " + idSubjectString);
+            Log.d(tag, "idSt2 ==> " + idSt2String);
+
+            editStatusNoti.execute(idSubjectString, idSt2String, urlString);
+            String resultString = editStatusNoti.get();
+            Log.d(tag, "Result ==> " + resultString);
+
+            if (Boolean.parseBoolean(resultString)) {
+                getActivity().finish();
+            } else {
+                Toast.makeText(getActivity(), "Cannot Edit Status", Toast.LENGTH_SHORT).show();
+            }
 
 
         } catch (Exception e) {

@@ -29,12 +29,11 @@ public class EditStatusNoti extends AsyncTask<String, Void, String>{
             OkHttpClient okHttpClient = new OkHttpClient();
             RequestBody requestBody = new FormEncodingBuilder()
                     .add("isAdd", "true")
-                    .add("Column", strings[0])
-                    .add("idSubject", strings[1])
-                    .add("idSt2", strings[2])
+                    .add("id_Subject", strings[0])
+                    .add("idSt2", strings[1])
                     .build();
             Request.Builder builder = new Request.Builder();
-            Request request = builder.url(strings[3]).post(requestBody).build();
+            Request request = builder.url(strings[2]).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
             return response.body().string();
 
