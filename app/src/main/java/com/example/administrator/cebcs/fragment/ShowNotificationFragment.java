@@ -27,6 +27,7 @@ public class ShowNotificationFragment extends Fragment {
     private String idSubjectString, detailString,
             dateString, idSt2String, firstNotiString,
             secondNotiString, lastNotiString, labelButtonString;
+    private String columnString = null;
 
     public static ShowNotificationFragment showNotiInstance(String idSubjectString,
                                                             String detailString,
@@ -74,6 +75,7 @@ public class ShowNotificationFragment extends Fragment {
         Log.d(tag, "idSt2 ==> " + idSt2String);
         Log.d(tag, "idSubject ==> " + idSubjectString);
 
+
         try {
 
             Button button = getView().findViewById(R.id.btnSubmit);
@@ -94,12 +96,15 @@ public class ShowNotificationFragment extends Fragment {
 
             if (Integer.parseInt(firstNotiString) == 0) {
                 labelButtonString = "First Notification";
+                columnString = "FirstNoti";
             } else {
                 if (Integer.parseInt(secondNotiString) == 0) {
                     labelButtonString = "Second Notification";
+                    columnString = "SecondNoti";
                 } else {
                     if (Integer.parseInt(lastNotiString) == 0) {
                         labelButtonString = "Last Notification";
+                        columnString = "LastNoti";
                     } else {
                         labelButtonString = "No Notification";
                     }
@@ -107,6 +112,26 @@ public class ShowNotificationFragment extends Fragment {
             }
 
             button.setText(labelButtonString);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    editStatus(columnString);
+                }
+            });
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private void editStatus(String columnString) {
+
+        try {
+
+
 
 
         } catch (Exception e) {
