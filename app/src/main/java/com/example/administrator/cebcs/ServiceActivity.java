@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -138,12 +139,14 @@ public class ServiceActivity extends AppCompatActivity {
                 notiCalendar1.set(Calendar.HOUR_OF_DAY, 8);
 
 //                For Test  จะทำงาน Delay 1 นาที
-                Calendar calendarTest = Calendar.getInstance();
-                calendarTest.set(Calendar.MINUTE, calendar.get(Calendar.MINUTE) + 1);
-                calendarTest.set(Calendar.SECOND, 0);
-                Log.d(tag, "TestCalendar ==> " + calendarTest.getTime());
+//                calendarTest คือการเอาเวลาปัจจุบัน มาเพิ่ม 1 นาที
+
+//                Calendar Test
+                Calendar calendarTest = testCalendar(calendar);
+                //Log.d(tag, "TestCalendar ==> " + calendarTest.getTime());
 //                End Test
 
+//                ถ้าของจริง ให้เอาค่าของ notiCalendar1 แทน calendarTest
                 myNotification(calendarTest, 1);
 
 
@@ -151,17 +154,24 @@ public class ServiceActivity extends AppCompatActivity {
 
                 if (Integer.parseInt(secondNotiString) == 0) {
 
-                    calendar.set(Calendar.HOUR_OF_DAY, 8);
+                    notiCalendar1.set(Calendar.HOUR_OF_DAY, 8);
 
-                    myNotification(calendar, 2);
+//                    สำหรับ Test
+                    Calendar calendarTest = testCalendar(calendar);
+
+
+                    myNotification(calendarTest, 2);
 
                 } else {
 
                     if (Integer.parseInt(lastNotiString) == 0) {
 
-                        calendar.set(Calendar.HOUR_OF_DAY, 12);
+                        notiCalendar1.set(Calendar.HOUR_OF_DAY, 12);
 
-                        myNotification(calendar, 3);
+//                        For Test
+                        Calendar calendartest = testCalendar(calendar);
+
+                        myNotification(calendartest, 3);
 
 
                     }
@@ -176,6 +186,15 @@ public class ServiceActivity extends AppCompatActivity {
             Log.d(tag, "e ==> " + e.toString());
         }
 
+    }
+
+    @NonNull
+    private Calendar testCalendar(Calendar calendar) {
+        Calendar calendarTest = Calendar.getInstance();
+        calendarTest.set(Calendar.MINUTE, calendar.get(Calendar.MINUTE) + 1);
+        calendarTest.set(Calendar.SECOND, 0);
+        Log.d("25DecV1", "TestCalendar ==> " + calendarTest.getTime());
+        return calendarTest;
     }
 
     private void myNotification(Calendar notiCalendar1, int indexOfNoti) {

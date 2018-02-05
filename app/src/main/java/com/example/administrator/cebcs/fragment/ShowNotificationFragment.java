@@ -22,7 +22,7 @@ import org.json.JSONObject;
  * Created by masterung on 25/12/2017 AD.
  */
 
-public class ShowNotificationFragment extends Fragment{
+public class ShowNotificationFragment extends Fragment {
 
     private String idSubjectString, detailString,
             dateString, idSt2String, firstNotiString,
@@ -88,9 +88,25 @@ public class ShowNotificationFragment extends Fragment{
             JSONArray jsonArray = new JSONArray(jsonString);
             JSONObject jsonObject = jsonArray.getJSONObject(0);
 
+            firstNotiString = jsonObject.getString("FirstNoti");
+            secondNotiString = jsonObject.getString("SecondNoti");
+            lastNotiString = jsonObject.getString("LastNoti");
 
+            if (Integer.parseInt(firstNotiString) == 0) {
+                labelButtonString = "First Notification";
+            } else {
+                if (Integer.parseInt(secondNotiString) == 0) {
+                    labelButtonString = "Second Notification";
+                } else {
+                    if (Integer.parseInt(lastNotiString) == 0) {
+                        labelButtonString = "Last Notification";
+                    } else {
+                        labelButtonString = "No Notification";
+                    }
+                }
+            }
 
-
+            button.setText(labelButtonString);
 
 
         } catch (Exception e) {
@@ -123,7 +139,6 @@ public class ShowNotificationFragment extends Fragment{
 
             TextView textView = getView().findViewById(R.id.txtSubject);
             textView.setText("Subject : " + jsonObject.getString("Subject"));
-
 
 
         } catch (Exception e) {
